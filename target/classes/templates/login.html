@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+
+<head th:fragment="head">
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<div th:fragment="head">
+	<link rel="shortcut icon" type="image/png" th:href="@{/img/cites.png}" />
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous">
+	<!-- Custom fonts for this template-->
+	<link th:href="@{/vendor/fontawesome-free/css/all.min.css}"
+		rel="stylesheet" type="text/css">
+
+	<!-- Custom styles for this template-->
+	<link th:href="@{/css/sb-admin-login.css}" rel="stylesheet"
+		type="text/css">
+	<link th:href="@{/css/login-style.css}" rel="stylesheet"
+		type="text/css">
+
+	<title></title>
+
+</div>
+</head>
+
+<body class="bg-white">
+
+
+
+	<div class="container h-100 ">
+		<div class="row align-items-center h-100">
+			<div class="col-9 mx-auto text-center background-login">
+
+				<img class="img-fluid images-style"
+					>
+
+				<div class="card card-login mx-auto form-transparent">
+				<div th:if="${param.error != null}" class="alert alert-danger" th:text="${session[SPRING_SECURITY_LAST_EXCEPTION]}">error</div>
+					<div class="card-body ">
+						<form id="myForm" novalidate="" th:action="@{/app-login}"
+							th:method="post" th:object="${user}">
+							<div th:if="${msg}" id="info">
+								<div id="alert" class="alert alert-info">
+									<button type="button" class="close" data-dismiss="alert"
+										aria-hidden="true">×</button>
+									<span class="glyphicon glyphicon-info-sign"></span> <strong>Informacja!</strong>
+									<hr class="message-inner-separator">
+									<p th:text="${msg}"></p>
+								</div>
+							</div>
+							<!-- <div th:if="${param.error}" id="danger">
+						<div id="alert" class="alert alert-danger">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-hidden="true">×</button>
+							<span class="glyphicon glyphicon-info-sign"></span> <strong>Błąd!</strong>
+							<hr class="message-inner-separator">
+							<div>Niepoprawny login lub
+								hasło.</div>
+						</div>
+					</div> -->
+							<div class="form-group">
+								<label for="inputUsername">Login</label> <input
+									th:classappend="${param.error}? 'is-invalid': ''"
+									name="username" type="text" id="inputUsername"
+									class="form-control" placeholder="Login">
+								<div class="invalid-feedback"
+									id="username-invalid-feedback-jquery">Niepoprawny login
+									lub hasło.</div>
+
+
+
+
+							</div>
+							<div class="form-group">
+								<label for="inputPassword">Hasło</label> <input
+									th:classappend="${param.error}? 'is-invalid': ''"
+									name="password" type="password" id="inputPassword"
+									class="form-control " placeholder="Hasło">
+								<div class="invalid-feedback" id="pass-invalid-feedback">Niepoprawny
+									login lub hasło.</div>
+
+							</div>
+							<div class="form-group"></div>
+							<button type="submit" class="btn btn-primary btn-block btn-blue"
+								id="btnSubmit">Zaloguj</button>
+						</form>
+						<div class="text-center remember-pass">
+							<a class="d-block small color-black"
+								th:href="@{/user/rememberPassword}">Przypomnienie hasła </a>
+						</div>
+
+					</div>
+
+				</div>
+
+				<img class="img-fluid images-style"
+					th:src="@{/img/citesLoginEagle2.png}">
+
+
+			</div>
+			<footer class="mx-auto margin-footer">
+				<img class="img-fluid center-text images-style"
+					th:src="@{/img/citesLoginFooter.png}">
+			</footer>
+
+		</div>
+
+
+	</div>
+
+
+
+
+
+	<div th:fragment="js">
+
+		<script th:src="@{https://code.jquery.com/jquery-3.3.1.min.js}"
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			crossorigin="anonymous"></script>
+		<script
+			th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js}"
+			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous">
+			
+		</script>
+
+		<script
+			th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js}"
+			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"></script>
+		<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<!-- Core plugin JavaScript-->
+		<script th:src="@{/vendor/jquery-easing/jquery.easing.min.js}"></script>
+		<!-- Custom scripts for all pages-->
+		<script th:src="@{/js/sb-admin.min.js}"></script>
+
+
+	</div>
+
+
+</body>
+
+</html>

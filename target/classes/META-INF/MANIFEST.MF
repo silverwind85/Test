@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: login-blocked
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Sławomir Cieślar
+Implementation-Vendor-Id: pl.login-blocked
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/login-blocked
+Created-By: Maven Integration for Eclipse
+

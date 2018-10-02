@@ -1,0 +1,33 @@
+.bg-white {
+	background-color: #dedfdf !important;
+}
+
+.images-style {
+	max-width: 100%;
+	height: auto;
+}
+
+.background-login {
+	background-image: url(../img/background.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-bottom: 1px solid white;
+}
+
+.margin-footer {
+	margin-top: 70px !important;
+}
+
+.btn-blue {
+	background-color: #1c2b54;
+	border-color: #1c2b54
+}
+
+.form-transparent{
+	background-color: transparent;
+	border: none;
+}
+.color-black{
+	color:black;
+}
